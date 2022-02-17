@@ -39,15 +39,15 @@ def cloudPicture2(file):
         #text=chinese_jieba(text)
         #2.图片遮罩层
         #mask_pic=numpy.array(Image.open("bingbing.jpg"))
-        mask_pic= imread(r"bingbing.jpg")
+        mask_pic= imread(r"love.jpg")
         #3.将参数mask设值为：mask_pic
 
-        wordcloud = WordCloud(scale=4,font_path="/Library/Fonts/Songti.ttc",mask=mask_pic).generate(text)
+        wordcloud = WordCloud(scale=4,font_path="JDJSZHONG.TTF",mask=mask_pic).generate(text)
         image=wordcloud.to_image()
         image.show()
         wordcloud.to_file('pic2.png')
 
 if __name__ == '__main__':
     file="danmu.txt"
-    cloudPicture1(file)
-    # cloudPicture2(file)
+    # cloudPicture1(file)
+    cloudPicture2(file)
